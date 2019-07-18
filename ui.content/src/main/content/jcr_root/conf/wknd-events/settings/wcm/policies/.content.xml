@@ -7,13 +7,16 @@
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
-                    <content-default
-                        jcr:description="Policy for editable layout containers"
+                    <jcr:content
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="WKND Events Default"
+                        mergeList="{Boolean}true"/>
+                    <default
+                        jcr:lastModified="{Date}2017-12-07T15:43:22.777+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Event (Angular) Template Root Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:wknd-events,/apps/wknd-events/components/form/container]"
-                        policyResourceType="wcm/foundation/components/responsivegrid">
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:WKND Events - Content]">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                 <image
@@ -28,24 +31,144 @@
                         <jcr:content
                             jcr:primaryType="nt:unstructured"
                             mergeList="{Boolean}true"/>
-                    </content-default>
+                    </default>
                 </responsivegrid>
             </components>
         </foundation>
     </wcm>
     <wknd-events jcr:primaryType="nt:unstructured">
         <components jcr:primaryType="nt:unstructured">
-            <form jcr:primaryType="nt:unstructured">
-                <container jcr:primaryType="nt:unstructured">
-                    <form-container
+            <structure jcr:primaryType="nt:unstructured">
+                <page jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:description="Default policy of the page"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="WKND Events Form"
+                        jcr:title="SPA Page"
+                        sling:resourceType="wcm/core/components/policy/policy"/>
+                </page>
+                <app jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:description="Default policy of the page"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SPA Page"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/wknd-events/components/form/button,/apps/wknd-events/components/form/hidden,/apps/wknd-events/components/form/options,/apps/wknd-events/components/form/text]">
+                        isRoot="{Boolean}true"
+                        structureDepth="2"
+                        structurePatterns="(angular/)(?:(?!blog)(/)?)"/>
+                </app>
+            </structure>
+            <content jcr:primaryType="nt:unstructured">
+                <text jcr:primaryType="nt:unstructured">
+                    <policy_1539029830437
+                        jcr:lastModified="{Date}2018-10-08T16:17:33.502-04:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND Events Text"
+                        sling:resourceType="wcm/core/components/policy/policy">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
-                    </form-container>
-                </container>
-            </form>
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats
+                                    jcr:primaryType="nt:unstructured"
+                                    override="true">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <item4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <item5
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 5"
+                                        tag="h5"/>
+                                    <item6
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 6"
+                                        tag="h6"/>
+                                    <item7
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Quote"
+                                        tag="blockquote"/>
+                                    <item8
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Preformatted"
+                                        tag="pre"/>
+                                </formats>
+                            </paraformat>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="-">
+                                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                    <chars
+                                        jcr:primaryType="nt:unstructured"
+                                        override="true">
+                                        <item0
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;copy;"
+                                            name="copyright"/>
+                                        <item1
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;euro;"
+                                            name="euro"/>
+                                        <item2
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;reg;"
+                                            name="registered"/>
+                                        <item3
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;trade;"
+                                            name="trademark"/>
+                                    </chars>
+                                </specialCharsConfig>
+                            </misctools>
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                features="paste-plaintext"/>
+                            <findreplace
+                                jcr:primaryType="nt:unstructured"
+                                features="-"/>
+                            <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="-"/>
+                            <table
+                                jcr:primaryType="nt:unstructured"
+                                features="-"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="-"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="bold,italic"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="modifylink,unlink"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="-"/>
+                        </rtePlugins>
+                    </policy_1539029830437>
+                </text>
+                <image jcr:primaryType="nt:unstructured"/>
+            </content>
         </components>
     </wknd-events>
 </jcr:root>
